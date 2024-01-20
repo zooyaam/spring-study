@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/index.css}" rel="stylesheet">
+	<title>index</title>
+</head>
+<body>
+	<header>
+		<h1 class="title">Welcome!</h1>
+	</header>
+	<nav>
+
+	</nav>
+	<main>
+		<section class="container">
+			<div class="button">
+				<a role="button" th:href="@{/board/save}">글작성</a>
+			</div>
+			<div class="button">
+				<a role="button" th:href="@{/board/list}">글목록</a>
+			</div>
+		</section>
+	</main>
+	<footer>
+
+	</footer>
+</body>
+</html>
