@@ -10,12 +10,20 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardDTO {
-    private Long id;
     private String writer;
     private String password;
     private String title;
     private String content;
     private int hits;
-    private LocalDateTime createdTime;
-    private LocalDateTime updatedTime;
+
+    @Override
+    public String toString() {
+        return "BoardDTO{" +
+                ", writer='" + writer + '\'' +
+                ", password='" + password + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", hits=" + hits +
+                '}';
+    }
 }

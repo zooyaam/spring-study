@@ -1,5 +1,6 @@
 package basic.board.entity;
 
+import basic.board.dto.BoardDTO;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +16,20 @@ public class Board {
     private String title;
     private String content;
     private int hits;
-    private LocalDateTime createdTime;
-    private LocalDateTime updatedTime;
+
+    public static Board from(final BoardDTO boardDTO) {
+        Long id = -1L;
+        String writer = boardDTO.getWriter();
+        String password  = boardDTO.getPassword();
+        String title = boardDTO.getTitle();
+        String content = boardDTO.getContent();
+        int hits = boardDTO.getHits();
+        return new Board(id, writer, password, title, content, hits);
+    }
+
+    public void setId(final Long id) {
+        if (id == -1L) {
+            this.id = id;
+        }
+    }
 }
