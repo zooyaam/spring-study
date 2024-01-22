@@ -1,5 +1,10 @@
 body {
-  background: beige;
+  background: #f5f5f5;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .save-container {
