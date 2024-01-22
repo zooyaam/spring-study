@@ -1,6 +1,7 @@
 package basic.board.repository;
 
 import basic.board.entity.Board;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,6 +15,7 @@ public class MemoryBoardRepository implements BoardRepository {
     @Override
     public Board save(final Board board) {
         board.setId(++sequence);
+        System.out.println("board.getId() = " + board.getId());
         boards.put(board.getId(), board);
         return board;
     }
@@ -25,7 +27,7 @@ public class MemoryBoardRepository implements BoardRepository {
 
     @Override
     public List<Board> findAll() {
-        return null;
+        return new ArrayList<>(boards.values());
     }
 
     @Override

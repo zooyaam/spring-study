@@ -28,8 +28,6 @@ public class Board {
     }
 
     public void setId(final Long id) {
-        if (id == -1L) {
-            this.id = id;
-        }
+        this.id = id;
     }
 }

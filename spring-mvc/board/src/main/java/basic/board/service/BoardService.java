@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public interface BoardService {
     Board save(BoardDTO boardDTO);
     Board findById(Long id);
-    List<Board> findAll();
+    List<BoardDTO> findAll();
     Board update();
     void delete();
 }

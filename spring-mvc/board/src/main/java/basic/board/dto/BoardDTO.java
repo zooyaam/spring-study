@@ -1,5 +1,6 @@
 package basic.board.dto;
 
+import basic.board.entity.Board;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardDTO {
+    private Long id;
     private String writer;
     private String password;
     private String title;
@@ -25,5 +27,15 @@ public class BoardDTO {
                 ", content='" + content + '\'' +
                 ", hits=" + hits +
                 '}';
+    }
+
+    public static BoardDTO from(final Board board) {
+        Long id = board.getId();
+        String writer = board.getWriter();
+        String password = board.getPassword();
+        String title = board.getTitle();
+        String content = board.getContent();
+        int hits = board.getHits();
+        return new BoardDTO(id, writer, password, title, content, hits);
     }
 }
