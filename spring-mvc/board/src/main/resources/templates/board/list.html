@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/list.css?after}" rel="stylesheet">
+	<title>list</title>
+</head>
+<body>
+<h1 class="title">글 목록</h1>
+<div class="container">
+	<table>
+		<thead>
+		<tr>
+			<th>id</th>
+			<th>title</th>
+			<th>writer</th>
+			<th>date</th>
+			<th>hits</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="board: ${boards}">
+			<td><a th:text="${board.id}" th:href="@{|/board/${board.id}|}"></a></td>
+			<td><a th:text="${board.title}" th:href="@{|/board/${board.id}|}"></a></td>
+			<td th:text="${board.writer}"></td>
+			<td th:text="${board.content}"></td>
+			<td th:text="${board.hits}"></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
